@@ -1,33 +1,33 @@
 (meditations
   "You can use vectors in clojure to create an 'Array' like structure"
-  (= __ (count [42]))
+  (= 1 (count [42]))  ; Counts elements of vector - 1 element
 
   "You can create a vector in several ways"
-  (= __ (vec nil))
+  (= [] (vec nil))  ; Creates a new vector containing the contents of the argument  
 
   "And populate it in either of these ways"
-  (= __ (vec '(1)))
+  (= [1] (vec '(1))) ; As above
 
   "There is another way as well"
-  (= __ (vector nil))
+  (= [nil] (vector nil)) ; So vector is not the same as vec. vector takes the arguments (0 to n arguments) and use those directly as content. How intuitive.. ;)
 
   "But you can populate it with any number of elements at once"
-  (= [1 __] (vec '(1 2)))
+  (= [1 2] (vec '(1 2))) ; vec adds content of argument
 
   "And add to it as well"
-  (= __ (conj (vec nil) 333))
+  (= [333] (conj (vec nil) 333)) ; vec first creates an empty vector, then we conjugate 333 to this vector.
 
   "You can get the first element of a vector like so"
-  (= __ (first [:peanut :butter :and :jelly]))
+  (= :peanut (first [:peanut :butter :and :jelly])) ; Like we do for lists.
 
   "And the last in a similar fashion"
-  (= __ (last [:peanut :butter :and :jelly]))
+  (= :jelly (last [:peanut :butter :and :jelly])) ; Like we do for lists
 
   "Or any index if you wish"
-  (= __ (nth [:peanut :butter :and :jelly] 3))
+  (= :jelly (nth [:peanut :butter :and :jelly] 3)) ; get the item indexed by the number 3
 
   "You can also slice a vector"
-  (= __ (subvec [:peanut :butter :and :jelly] 1 3))
+  (= [:butter :and] (subvec [:peanut :butter :and :jelly] 1 3))  ; start is inclusive, end is exclusive. Awkward.
 
   "Equality with collections is in terms of values"
-  (= (list 1 2 3) (vector 1 2 __)))
+  (= (list 1 2 3) (vector 1 2 3))) ; OK.

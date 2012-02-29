@@ -1,21 +1,21 @@
 (meditations
   "We shall contemplate truth by testing reality, via equality."
-  (= __ true)
+  (= true true) ; true is true
 
   "To understand reality, we must compare our expectations against reality."
-  (= __ (+ 1 1))
+  (= 2 (+ 1 1)) ; 1+1=2
 
   "You can test equality of many things"
-  (= (+ 3 4) __ (+ 2 __))
+  (= (+ 3 4) 7 (+ 2 5)) ; Three values, all equal 7
 
   "Some things may appear different, but be the same"
-  (= 2 2/1 __)
+  (= 2 2/1 (* 2 1)) ; 2 = 2/1 = 2*1
 
   "You cannot generally float to heavens of integers"
-  (= __ (= 2 2.0))
+  (= false (= 2 2.0)) ; Floats are not cast to integers or vice versa
 
   "But a looser equality is also possible"
-  (== 2.0 2 __)
+  (== 2.0 2 2/1) ; 
 
   "When things cannot be equal, they must be different"
-  (not= :fill-in-the-blank __))
+  (not= :fill-in-the-blank :filled-in-blank)) ; two keywords never reference the same thing
